@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBox from './components/SearchBox'
+// import SearchBox from './components/SearchBox'
 import DataGrid from './components/DataGrid'
 // import PageNav from './components/PageNav'
 import Advice from './components/Advice'
@@ -20,7 +20,7 @@ class App extends Component {
     this.setState(Object.assign(this.state.movie, [movie]));
   }
 
-  jegan() {
+  componentDidMount() {
     fetch('https://api.themoviedb.org/3/discover/movie?api_key=ef47563a6cb08d01735805b6afd84a9f&language=en-US&sort_by=popularity.desc')
       .then(response => {
         return response.json();
@@ -40,11 +40,11 @@ class App extends Component {
         <div className="row">
           <div className="col-4">
             <div>
-              {/* <form className="form-inline my-2-mylg-0" > */}
+              <form className="form-inline my-2-mylg-0" >
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                 <button className="btn btn-outline-success my-2 my-sm-0"
-                  onClick={() => this.jegan()}>Search</button>
-              {/* </form> */}
+                  >Search</button>
+              </form>
             </div>
           </div>
           <div className="col-4">

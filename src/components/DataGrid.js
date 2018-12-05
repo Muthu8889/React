@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Date from './Date'
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import Content from './Content';
 
 class DataGrid extends Component {
     constructor(props) {
