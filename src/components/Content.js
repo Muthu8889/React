@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 class Content extends Component {
-    
-   
+
+
     render() {
-        console.log('Content cponent props value .....',this.props);
-        
-        
-        return(
+        console.log('Content cponent props value .....', this.props);
+
+
+        return (
             <div>
-                   <div>
+                <div>
                     <BootstrapTable data={this.props.rowData}>
-                        <TableHeaderColumn isKey dataField='original_title'>
+                        <TableHeaderColumn isKey dataField='id'>
                             Title
                         </TableHeaderColumn>
-                        <TableHeaderColumn dataField='vote_average'>
-                            Vote Average
+                        <TableHeaderColumn dataField='description'>
+                            Description
                         </TableHeaderColumn>
-                        <TableHeaderColumn dataField='release_date'>
-                            Release Date
+                        <TableHeaderColumn dataField='value'>
+                            Value
+                        </TableHeaderColumn>
+                        <TableHeaderColumn dataField='date'>
+                            Date
                         </TableHeaderColumn>
                     </BootstrapTable>
                 </div>
-                </div>
+            </div>
         );
     }
 }
