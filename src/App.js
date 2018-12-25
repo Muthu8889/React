@@ -26,7 +26,7 @@ class App extends Component {
     this.getMovies();
   }
 
-  getMovies(){
+  getMovies = () => {
     fetch('http://localhost:8082/rest/stock/all')
       .then(response => {
         return response.json();
@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div >
         <br />
-        <div className="row">
+        {/* <div className="row">
           <div className="col-4">
             <div>
               <form className="form-inline my-2-mylg-0" >
@@ -53,11 +53,11 @@ class App extends Component {
             </div>
           </div>
           <div className="col-4">
-            {/* <PageNav /> */}
+            {/* <PageNav />  
           </div>
           <div className="col-4"></div>
         </div>
-        <hr />
+        <hr /> */}
         <div >
           <div className="row">
             <div className="col-6">

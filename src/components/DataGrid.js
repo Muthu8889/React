@@ -10,33 +10,33 @@ class DataGrid extends Component {
             description: "asdasd",
             value: 25,
             dateValue: "12-45-45",
-            selectedId : 0
+            selectedId: 0
         }
     }
     handleRowSelect = (row) => {
         // console.log('selectedRow row', row);
-        this.setState(Object.assign(this.state.selectedMovie, row));
-        
+        this.setState(Object.assign( this.state.selectedMovie, row));
+
         console.log('selectedRow state', this.state.selectedMovie.id);
-        
+
         this.props.callBack(row);
     }
     add = () => {
-        fetch('http://localhost:8082/rest/stock/add/'+this.state.id+'/'+this.state.description+'/'+this.state.value+'/'+this.state.dateValue).then(this.props.refresh());
+        fetch('http://localhost:8082/rest/stock/add/' + this.state.id + '/' + this.state.description + '/' + this.state.value + '/' + this.state.dateValue).then(this.props.refresh());
     }
 
     delete = () => {
-        fetch('http://localhost:8082/rest/stock/delete/'+this.state.selectedMovie.id).then(this.props.refresh());
+        fetch('http://localhost:8082/rest/stock/delete/' + this.state.selectedMovie.id).then(this.props.refresh());
     }
 
-    save = (e) =>{
+    save = (e) => {
         this.setState({
-            [e.target.name] : e.target.value 
+            [e.target.name]: e.target.value
         })
     }
 
     render() {
-        console.log("Rerenderrrrrr.....", this.props);
+        // console.log("Rerenderrrrrr.....", this.props);
         const selectRow = {
             mode: 'radio',
             clickToSelect: true,
